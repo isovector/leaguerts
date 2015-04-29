@@ -1,0 +1,148 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B36D45AE-E0EC-433B-B3F4-C920ECE31188}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeagueEd</RootNamespace>
+    <AssemblyName>LeagueEd</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfirmClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmClose.Designer.cs">
+      <DependentUpon>ConfirmClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorSelection.Designer.cs">
+      <DependentUpon>EditorSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessagePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessagePrompt.Designer.cs">
+      <DependentUpon>MessagePrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptEd\RTB.cs">
+    </Compile>
+    <Compile Include="ScriptEd\ScriptEd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptEd\ScriptEd.Designer.cs">
+      <DependentUpon>ScriptEd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfirmClose.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditorSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessagePrompt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MessagePrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptEd\ScriptEd.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScriptEd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbilityEd\AbilityEd.resx">
+      <DependentUpon>AbilityEd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitEd\UnitEd.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UnitEd.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScriptEd\SyntaxHighlighter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScriptEd\UndoData.cs" />
+    <Compile Include="ScriptEd\Win32.cs" />
+    <Compile Include="AbilityEd\AbilityEd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbilityEd\AbilityEd.Designer.cs">
+      <DependentUpon>AbilityEd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitEd\UnitEd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitEd\UnitEd.Designer.cs">
+      <DependentUpon>UnitEd.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\League\League.csproj">
+      <Project>{61FAFADC-D1B7-48A3-9238-D28527BF2A1D}</Project>
+      <Name>League</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "LeagueEd.exe" "..\..\..\League\bin\x86\Debug\LeagueEd.exe"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
